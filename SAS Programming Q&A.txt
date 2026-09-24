@@ -1147,3 +1147,81 @@ what is compress and compbl function
 what is scan and index 
 what is scan and find 
 what is find and index 
+
+
+***********************************************************************************************************
+35
+15
+20
+10
+30
+25
+35
+25
+
+i want output like this
+ 
+Output
+Table1	Table2
+35	     15
+35	     20
+25	     10
+25	     30
+
+SupId	SubId	Qty
+1		11		5
+1		12		6
+1		13		7
+2		21		2
+2		22		7
+3		31		3
+3		32		3
+3		33		8
+4		41		10
+
+I want max subid by each supid group. so u need to find the group supid and find max qty 
+
+how to keep even -numbered observations in sas dataset ?
+
+Table 1	Table 2
+VAR A	VAR B
+1		0
+0		1
+1		2
+2		3
+0		0
+
+if you do inner join what would be the output and explain ?
+what is left join ?
+what is right join?
+what is full join?
+
+
+Find the second highest salary from income?/
+ans:-proc sql;
+   select max(salary) as second_highest
+   from income
+   where salary < (select max(salary) from income);
+quit;
+
+what is inner query and outer query in sql? which execute first ?
+ans:-The inner query:
+sql
+(select max(salary) from income)
+→ Finds the highest salary in the table.
+
+The outer query:
+sql
+select max(salary) 
+from income 
+where salary < (inner query result)
+→ Finds the maximum salary that is less than the highest salary, i.e., the second highest.
+
+🔄 Inner vs. Outer Query Execution
+Inner query executes first → because the outer query depends on its result.
+
+Once the inner query gives the highest salary, the outer query uses that value to filter and compute the second highest.
+
+Inner query (subquery): Runs first, provides a value or dataset to the outer query.
+
+Outer query: Uses the result of the inner query to produce the final output.
